@@ -7,11 +7,9 @@ export const Conteiner = styled.div`
   align-items: center;
   font-size: 20px;
   color: #010101;
-  margin:auto;
+  margin: auto;
 `;
 export const Title = styled.h2`
-  font-size: 23px;
- 
+  margin-top: 20px;
+  color: #fffad9;
 `;
-
-

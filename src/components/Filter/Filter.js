@@ -1,8 +1,13 @@
-import { ImputForm, Label } from '../Form/Form.styled';
+// import { ImputForm, Label } from '../Form/Form.styled';
 
 import { filterContact } from 'redux/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/contacts/selectors';
+import {
+  Forms,
+  Label,
+  Input,
+} from '../RegisterForm/RegisterForm.styled';
 
 const Filter = () => {
   const dispatch = useDispatch();
@@ -10,10 +15,9 @@ const Filter = () => {
   console.log(filter);
 
   return (
-    <ImputForm>
+    <Forms>
       <Label>
-        Find contacts by name
-        <input
+        <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -21,9 +25,10 @@ const Filter = () => {
           value={filter}
           onChange={evt => dispatch(filterContact(evt.target.value))}
           required
+          placeholder="Find contacts by name"
         />
       </Label>
-    </ImputForm>
+    </Forms>
   );
 };
 

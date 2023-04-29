@@ -1,10 +1,16 @@
 import { useState } from 'react';
-import { ImputForm, Label } from './Form.styled';
+// import { ImputForm, Label } from './Form.styled';
 
 import { addContact } from 'redux/contacts/operations';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { selectAllContacts } from 'redux/contacts/selectors';
+import {
+  Forms,
+  Label,
+  Input,
+  RegBtn,
+} from '../RegisterForm/RegisterForm.styled';
 
 export function Form() {
   const [name, setName] = useState('');
@@ -38,10 +44,9 @@ export function Form() {
   };
 
   return (
-    <ImputForm onSubmit={handleSubmit}>
+    <Forms onSubmit={handleSubmit}>
       <Label>
-        Name
-        <input
+        <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
@@ -49,11 +54,9 @@ export function Form() {
           value={name}
           onChange={handleChange}
           required
+          placeholder="Name"
         />
-      </Label>
-      <Label>
-        Number
-        <input
+        <Input
           type="tel"
           name="number"
           pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
@@ -61,10 +64,11 @@ export function Form() {
           value={number}
           onChange={handleChange}
           required
+          placeholder="Phone number"
         />
       </Label>
-      <button type="submit">Add contact</button>
-    </ImputForm>
+      <RegBtn type="submit">Add contact</RegBtn>
+    </Forms>
   );
 }
 

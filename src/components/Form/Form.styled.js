@@ -11,7 +11,7 @@ export const ImputForm = styled.form`
   border-radius: 5px;
   padding: 15px;
   background-image: linear-gradient(270deg, #33353a 15%, #000000 65%);
-  color: #ebe5de;
+  color: #fffad9;
 `;
 
 export const Label = styled.label`
