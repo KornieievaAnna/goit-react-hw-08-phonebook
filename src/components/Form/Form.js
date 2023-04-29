@@ -4,12 +4,12 @@ import { ImputForm, Label } from './Form.styled';
 import { addContact } from 'redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getContacts } from 'redux/selector';
+import { selectAllContacts } from 'redux/selector';
 
 export function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  const contacts = useSelector(getContacts);
+  const contacts = useSelector(selectAllContacts);
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
