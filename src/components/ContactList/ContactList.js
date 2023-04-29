@@ -2,28 +2,28 @@ import { useEffect, useRef } from 'react';
 import { Contacts, ButtonDelete } from './ContactList.styled';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { deleteContact, fetchContacts } from 'redux/operations';
-import { selectAllContacts } from 'redux/selector';
+import { deleteContact, fetchContacts } from 'redux/contacts/operations';
+import { selectAllContacts } from 'redux/contacts/selectors';
 
 export default function ContactList() {
   const isFirstRender = useRef(true);
   const dispatch = useDispatch();
+  const contacts = useSelector(selectAllContacts);
+  console.log(contacts);
 
   useEffect(() => {
     if (isFirstRender.current) {
-      dispatch(fetchContacts());
+    dispatch(fetchContacts());
     }
     isFirstRender.current = false;
     return;
   }, [dispatch]);
 
-  const contacts = useSelector(selectAllContacts);
-
   return (
     <ul>
-      {contacts.map(({ id, name, phone }) => (
+      {contacts.map(({ id, name, number }) => (
         <Contacts key={id}>
-          {name}: {phone}
+          {name}: {number}
           <ButtonDelete onClick={() => dispatch(deleteContact(id))}>
             Delete
           </ButtonDelete>

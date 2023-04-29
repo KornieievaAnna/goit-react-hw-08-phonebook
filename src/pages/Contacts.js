@@ -10,7 +10,9 @@ import {
   // selectError,
 } from 'redux/contacts/selectors';
 
-export function App() {
+import { Helmet } from 'react-helmet';
+
+export function Contacts() {
   const contacts = useSelector(selectAllContacts);
   console.log(contacts);
   const isLoading = useSelector(selectLoading);
@@ -18,14 +20,18 @@ export function App() {
 
   return (
     <Conteiner>
+      <Helmet>
+        <title>Your contacts</title>
+      </Helmet>
       <Title>Phonebook</Title>
       <Form />
       <Title>Contact</Title>
-      {contacts.length !== 0 && <Filter />}
+      <Filter />
+      {/* {contacts.length !== 0 && <Filter />} */}
       <ContactList />
       {isLoading && <Loader />}
       {/* {isLoading && !error && <Loader />} */}
     </Conteiner>
   );
 }
-export default App;
+export default Contacts;
