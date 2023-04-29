@@ -5,7 +5,7 @@ import { Loader } from '../components/Loader/Loader';
 import { Conteiner, Title } from '../components/App.styled';
 import { useSelector } from 'react-redux';
 import {selectLoading} from 'redux/contacts/selectors';
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from 'react-helmet';
 
 export function Contacts() {
   const isLoading = useSelector(selectLoading);
