@@ -1,14 +1,15 @@
-import { Hero } from './Home.styled';
+import { Hero, HeroText } from './Home.styled';
 
 export default function Home() {
   return (
     <Hero>
-      <h1>
-        Contact manager welcome page{' '}
-        <span role="img" aria-label="Greeting icon">
-          💁‍♀️
-        </span>
-      </h1>
+      <HeroText>Your smart contact book!</HeroText>
+      <HeroText> The free and easy way to collect phone numbers.</HeroText>
+      <h2>
+        The best tool to help you collect the phone numbers from friends and
+        family celebration , party invitations or other events.
+      </h2>
+      <p>Convenient filtering for quick search.</p>
     </Hero>
   );
 }

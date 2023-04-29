@@ -4,19 +4,12 @@ import Filter from '../components/Filter/Filter';
 import { Loader } from '../components/Loader/Loader';
 import { Conteiner, Title } from '../components/App.styled';
 import { useSelector } from 'react-redux';
-import {
-  selectAllContacts,
-  selectLoading,
-  // selectError,
-} from 'redux/contacts/selectors';
-
-import { Helmet } from 'react-helmet';
+import {selectLoading} from 'redux/contacts/selectors';
+import { Helmet } from 'react-helmet-async';
 
 export function Contacts() {
-  const contacts = useSelector(selectAllContacts);
-  console.log(contacts);
   const isLoading = useSelector(selectLoading);
-  // const error = useSelector(selectError);
+
 
   return (
     <Conteiner>
@@ -27,10 +20,8 @@ export function Contacts() {
       <Form />
       <Title>Contact</Title>
       <Filter />
-      {/* {contacts.length !== 0 && <Filter />} */}
       <ContactList />
       {isLoading && <Loader />}
-      {/* {isLoading && !error && <Loader />} */}
     </Conteiner>
   );
 }

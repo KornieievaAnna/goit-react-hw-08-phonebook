@@ -9,7 +9,6 @@ export default function ContactList() {
   const isFirstRender = useRef(true);
   const dispatch = useDispatch();
   const contacts = useSelector(selectAllContacts);
-  console.log(contacts);
 
   useEffect(() => {
     if (isFirstRender.current) {

@@ -1,9 +1,6 @@
 import { useState } from 'react';
-// import { ImputForm, Label } from './Form.styled';
-
 import { addContact } from 'redux/contacts/operations';
 import { useDispatch, useSelector } from 'react-redux';
-
 import { selectAllContacts } from 'redux/contacts/selectors';
 import {
   Forms,

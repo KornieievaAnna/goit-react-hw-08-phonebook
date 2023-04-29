@@ -6,7 +6,7 @@ import { Wrapper, Username, Button } from './UserMenu.styled';
 export const UserMenu = () => {
   const dispatch = useDispatch();
   const { user } = useAuth();
-  console.log(user);
+
   return (
     <Wrapper>
       <Username>Welcome, {user.email}</Username>

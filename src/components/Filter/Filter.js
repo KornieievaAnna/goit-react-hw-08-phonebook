@@ -1,5 +1,3 @@
-// import { ImputForm, Label } from '../Form/Form.styled';
-
 import { filterContact } from 'redux/filterSlice';
 import { useSelector, useDispatch } from 'react-redux';
 import { selectFilter } from 'redux/contacts/selectors';
@@ -12,7 +10,6 @@ import {
 const Filter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectFilter);
-  console.log(filter);
 
   return (
     <Forms>
